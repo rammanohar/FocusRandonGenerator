@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FocusRandonGenerator.WebApp", "FocusRandonGenerator.WebApp\FocusRandonGenerator.WebApp.csproj", "{FE1BD6B9-C15B-4A22-AB84-A78BF994E712}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FocusRandonGenerator.Api", "FocusRandonGenerator.Api\FocusRandonGenerator.Api.csproj", "{9D6B58CB-A4D7-4A1C-B5FC-C1C3CD4C6FCA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FocusRandomGenerator.DataEntities", "FocusRandomGenerator.DataEntities\FocusRandomGenerator.DataEntities.csproj", "{68DEF0B7-B1CC-4697-9782-560B33615773}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FocusRandomGenerator.Interface", "FocusRandomGenerator.Interface\FocusRandomGenerator.Interface.csproj", "{B257C925-35F7-443E-954A-B2EC710FD279}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Focus.RandomGenerator.Service", "Focus.RandomGenerator.Service\Focus.RandomGenerator.Service.csproj", "{22BFC2A8-244C-4402-AE1B-4FB03610CE96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Focus.RandomGenerator.Tests", "Focus.RandomGenerator.Tests\Focus.RandomGenerator.Tests.csproj", "{B35FF784-73C7-4C22-AE27-371AA3B7B526}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE1BD6B9-C15B-4A22-AB84-A78BF994E712}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE1BD6B9-C15B-4A22-AB84-A78BF994E712}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE1BD6B9-C15B-4A22-AB84-A78BF994E712}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE1BD6B9-C15B-4A22-AB84-A78BF994E712}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D6B58CB-A4D7-4A1C-B5FC-C1C3CD4C6FCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D6B58CB-A4D7-4A1C-B5FC-C1C3CD4C6FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D6B58CB-A4D7-4A1C-B5FC-C1C3CD4C6FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D6B58CB-A4D7-4A1C-B5FC-C1C3CD4C6FCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68DEF0B7-B1CC-4697-9782-560B33615773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68DEF0B7-B1CC-4697-9782-560B33615773}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68DEF0B7-B1CC-4697-9782-560B33615773}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68DEF0B7-B1CC-4697-9782-560B33615773}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B257C925-35F7-443E-954A-B2EC710FD279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B257C925-35F7-443E-954A-B2EC710FD279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B257C925-35F7-443E-954A-B2EC710FD279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B257C925-35F7-443E-954A-B2EC710FD279}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22BFC2A8-244C-4402-AE1B-4FB03610CE96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22BFC2A8-244C-4402-AE1B-4FB03610CE96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22BFC2A8-244C-4402-AE1B-4FB03610CE96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22BFC2A8-244C-4402-AE1B-4FB03610CE96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B35FF784-73C7-4C22-AE27-371AA3B7B526}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B35FF784-73C7-4C22-AE27-371AA3B7B526}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B35FF784-73C7-4C22-AE27-371AA3B7B526}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B35FF784-73C7-4C22-AE27-371AA3B7B526}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3C8ECD9-15D8-46B3-A3C7-3CF6550DCD88}
+	EndGlobalSection
+EndGlobal
