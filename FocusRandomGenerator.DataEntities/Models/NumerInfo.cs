@@ -1,6 +1,4 @@
-﻿using System;
-using System.Drawing;
-namespace FocusRandomGenerator.DataEntities
+﻿namespace FocusRandomGenerator.DataEntities
 {
 
     /// <summary>
@@ -22,7 +20,12 @@ namespace FocusRandomGenerator.DataEntities
         /// <summary>
         /// Gets or Sets ColorName
         /// </summary>
-        public string ColorName { get; set; }
+        public ColorCoding ColorCoding { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ColorCodingId
+        /// </summary>
+        public int ColorCodingId { get; set; }
 
     }
 }

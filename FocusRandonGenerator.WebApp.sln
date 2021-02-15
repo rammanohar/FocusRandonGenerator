@@ -13,7 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FocusRandomGenerator.Interf
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Focus.RandomGenerator.Service", "Focus.RandomGenerator.Service\Focus.RandomGenerator.Service.csproj", "{22BFC2A8-244C-4402-AE1B-4FB03610CE96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Focus.RandomGenerator.Tests", "Focus.RandomGenerator.Tests\Focus.RandomGenerator.Tests.csproj", "{B35FF784-73C7-4C22-AE27-371AA3B7B526}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Focus.RandomGenerator.Tests", "Focus.RandomGenerator.Tests\Focus.RandomGenerator.Tests.csproj", "{B35FF784-73C7-4C22-AE27-371AA3B7B526}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Focus.RandomGenerator.Models", "Focus.RandomGenerator.Models\Focus.RandomGenerator.Models.csproj", "{A7200E2E-95D6-4B19-919C-175B5932C37F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Focus.RandomGenerator.DataEntityInterface", "Focus.RandomGenerator.DataEntityInterface\Focus.RandomGenerator.DataEntityInterface.csproj", "{0FA71F6F-0F67-442E-9D29-7D3815710768}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Focus.RandomGenerator.DataEntityRepository", "Focus.RandomGenerator.DataEntitiyRepository\Focus.RandomGenerator.DataEntityRepository.csproj", "{390A0AED-1A02-4311-8CC7-CB0B940703BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +51,18 @@ Global
 		{B35FF784-73C7-4C22-AE27-371AA3B7B526}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B35FF784-73C7-4C22-AE27-371AA3B7B526}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B35FF784-73C7-4C22-AE27-371AA3B7B526}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7200E2E-95D6-4B19-919C-175B5932C37F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7200E2E-95D6-4B19-919C-175B5932C37F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7200E2E-95D6-4B19-919C-175B5932C37F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7200E2E-95D6-4B19-919C-175B5932C37F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FA71F6F-0F67-442E-9D29-7D3815710768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FA71F6F-0F67-442E-9D29-7D3815710768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FA71F6F-0F67-442E-9D29-7D3815710768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FA71F6F-0F67-442E-9D29-7D3815710768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{390A0AED-1A02-4311-8CC7-CB0B940703BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{390A0AED-1A02-4311-8CC7-CB0B940703BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{390A0AED-1A02-4311-8CC7-CB0B940703BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{390A0AED-1A02-4311-8CC7-CB0B940703BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

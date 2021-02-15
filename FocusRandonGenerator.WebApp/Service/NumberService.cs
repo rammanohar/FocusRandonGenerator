@@ -1,14 +1,12 @@
-﻿using FocusRandonGenerator.WebApp.Models;
-using FocusRandonGenerator.WebApp.Service.Interface;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
-
-namespace FocusRandonGenerator.WebApp.Service
+﻿namespace FocusRandonGenerator.WebApp.Service
 {
+    using FocusRandonGenerator.WebApp.Models;
+    using FocusRandonGenerator.WebApp.Service.Interface;
+    using Microsoft.Extensions.Configuration;
+    using System;
+    using System.Linq;
+    using System.Net.Http;
+
     public class NumberService : INumberService
     {
         IConfiguration Configuration;
@@ -23,7 +21,8 @@ namespace FocusRandonGenerator.WebApp.Service
             using (var client = new HttpClient())
             {
                 string baseURl = Configuration["ApiBaseUrl"];
-               
+                
+
                 client.BaseAddress = new Uri(baseURl);
 
                 //HTTP GET
@@ -68,18 +67,6 @@ namespace FocusRandonGenerator.WebApp.Service
                 }
             result.NoofRandomnumbers = result.RandonNumbers.Count();
             return result;
-        }
-
-        
-
-        public List<int> GetRandomNumbers()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<int> GetCustomRandomNumbers(int id)
-        {
-            throw new NotImplementedException();
         }
 
        

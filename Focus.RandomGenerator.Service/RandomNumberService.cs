@@ -1,5 +1,7 @@
 ﻿namespace Focus.RandomGenerator.Service
 {
+    using Focus.RandomGenerator.DataEntityInterface;
+    using Focus.RandomGenerator.Models;
     using FocusRandomGenerator.DataEntities;
     using FocusRandomGenerator.Interface;
     using System;
@@ -12,10 +14,34 @@
     /// </summary>
     public class RandomNumberService : IRandomNumberService
     {
+
+        private readonly IRandomNumberRepository randomNumberRepository;
+
+        /// <summary>
+        /// IRandomNumberRepository
+        /// </summary>
+        /// <param name="randomNumberRepository"></param>
+        public RandomNumberService(IRandomNumberRepository randomNumberRepository)
+        {
+            this.randomNumberRepository = randomNumberRepository;
+        }
         /// <summary>
         /// RandonNumberLimit
         /// </summary>
         private readonly int RandonNumberLimit = 49;
+
+        public IEnumerable<ColorRanges> GetColorRanges()
+        {
+            var colorranges = randomNumberRepository.GetColorCoding();
+
+            return colorranges.Select(c => new ColorRanges
+            {
+                Id = c.Id,
+                Color = c.Color,
+                LowerLimit = c.LowerLimit,
+                UpperLimit = c.UpperLimit
+            }).ToList();
+        }
 
         /// <summary>
         /// Business Rules
@@ -24,18 +50,15 @@
         /// <returns></returns>
         public string GetColorCoding(int value)
         {
-            if (value < 10)
-                return Color.Gray.Name;
-            else if (value < 20)
-                return Color.Blue.Name;
-            else if (value < 30)
-                return Color.Pink.Name;
-            else if (value < 40)
-                return Color.Green.Name;
-            else if (value < 50)
-                return Color.Yellow.Name;
-            else
-                return Color.Black.Name;
+
+            var colorName = this.randomNumberRepository.GetColorCoding().FindLast(c => value >= c.LowerLimit).Color;
+
+            if (string.IsNullOrEmpty(colorName))
+            {
+                colorName = Color.Black.Name;
+            }
+
+            return colorName;
         }
 
         /// <summary>
@@ -51,6 +74,23 @@
             return onlylist;
         }
 
+
+        /// <summary>
+        /// GetAllRandomNumber
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<GeneratedRandonNumber> GetAllRandomNumber()
+        {
+            return this.randomNumberRepository.GetAllRandomNumber().Select(r => new GeneratedRandonNumber
+            { 
+                 Id = r.Id,
+                  GeneratorDateTime = r.GeneratorDateTime,
+                  RandonNumbers =  r.Numbers.Select(n => new Models.NumberInfo { Id = n.Id, Number = n.Number, ColorName = n.ColorCoding.Color }).ToList() 
+            }).ToList();
+        }
+
+
+
         /// <summary>
         /// RandomGeneratorwithColorCodes
         /// </summary>
@@ -58,11 +98,8 @@
         /// <returns></returns>
         public GeneratedRandonNumber RandomGeneratorwithColorCodes(int noOfNumbers)
         {
-            //Init the GeneratedRandonNumber
-            GeneratedRandonNumber generatedRandonNumber = new GeneratedRandonNumber();
-            generatedRandonNumber.GeneratorDateTime = DateTime.Now;
-            List<NumberInfo> listofNumbers = new List<NumberInfo>();
-
+            List<Models.NumberInfo> listofNumbers = new List<Models.NumberInfo>();
+            var colorCodings = this.randomNumberRepository.GetColorCoding();
             //Generates the Random number
             Random RandomClass = new Random();
             int randomNumber;
@@ -73,23 +110,48 @@
                 {
                     randomNumber = RandomClass.Next(1, RandonNumberLimit);
                 }
-                    while (listofNumbers.Any(n => n.Number == randomNumber));
+                while (listofNumbers.Any(n => n.Number == randomNumber));
 
-                listofNumbers.Add(new NumberInfo
+                var colorInfo = colorCodings.FindLast(c => randomNumber >= c.LowerLimit);
+                listofNumbers.Add(new Models.NumberInfo
                 {
                     Number = randomNumber,
-                    ColorName = generatedRandonNumber.ColorCodingRange.FindLast(c => randomNumber >= c.LowerLimit).Color
-                });
+                    ColorName = colorInfo.Color,
+                    ColorId = colorInfo.Id
+                }); ;
             }
 
+            //Init the GeneratedRandonNumber
+            GeneratedRandonNumber generatedRandonNumber = new GeneratedRandonNumber();
+            generatedRandonNumber.GeneratorDateTime = DateTime.Now;
+
             // orders the random numbers
-            generatedRandonNumber.RandonNumbers = listofNumbers.OrderBy(n => n.Number).Select(n => new NumberInfo
+            generatedRandonNumber.RandonNumbers = listofNumbers.OrderBy(n => n.Number).Select(n => new Models.NumberInfo
             {
                 Number = n.Number,
-                ColorName = n.ColorName
+                ColorName = n.ColorName,
+                 ColorId = n.ColorId
             }).ToList();
+
+            SaveRandomNumber(generatedRandonNumber);
 
             return generatedRandonNumber;
         }
+
+
+        public bool SaveRandomNumber(GeneratedRandonNumber generatedRandonNumber)
+        {
+           return  this.randomNumberRepository.SaveRandomNumber(new RandomNumber
+            {
+                GeneratorDateTime = generatedRandonNumber.GeneratorDateTime,
+                Numbers = generatedRandonNumber.RandonNumbers.Select(r => new FocusRandomGenerator.DataEntities.NumberInfo
+                {
+                    Number = r.Number,
+                    ColorCodingId = r.ColorId,
+
+                }).ToList(),
+            });
+        }
+
     }
 }

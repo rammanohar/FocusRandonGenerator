@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-namespace FocusRandomGenerator.DataEntities
+﻿namespace FocusRandomGenerator.DataEntities
 {
     using System.Text;
 

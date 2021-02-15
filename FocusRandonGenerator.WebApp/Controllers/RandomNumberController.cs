@@ -1,9 +1,5 @@
 ﻿namespace FocusRandonGenerator.WebApp.Controllers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
     using FocusRandonGenerator.WebApp.Models;
     using FocusRandonGenerator.WebApp.Service.Interface;
     using Microsoft.AspNetCore.Mvc;

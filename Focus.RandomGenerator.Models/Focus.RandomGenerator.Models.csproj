@@ -4,8 +4,4 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Focus.RandomGenerator.Models\Focus.RandomGenerator.Models.csproj" />
-  </ItemGroup>
-
 </Project>

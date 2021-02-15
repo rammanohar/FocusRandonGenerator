@@ -5,12 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
     <PackageReference Include="Swashbuckle.Core" Version="5.6.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Focus.RandomGenerator.DataEntitiyRepository\Focus.RandomGenerator.DataEntityRepository.csproj" />
+    <ProjectReference Include="..\Focus.RandomGenerator.DataEntityInterface\Focus.RandomGenerator.DataEntityInterface.csproj" />
     <ProjectReference Include="..\Focus.RandomGenerator.Service\Focus.RandomGenerator.Service.csproj" />
+    <ProjectReference Include="..\FocusRandomGenerator.DataEntities\FocusRandomGenerator.DataEntities.csproj" />
     <ProjectReference Include="..\FocusRandomGenerator.Interface\FocusRandomGenerator.Interface.csproj" />
   </ItemGroup>
 

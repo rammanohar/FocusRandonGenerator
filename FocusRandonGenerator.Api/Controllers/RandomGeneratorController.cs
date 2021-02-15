@@ -74,5 +74,17 @@
             return Ok(result);
 
         }
+
+        /// <summary>
+        /// GetaAllColorCoding
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("GetaAllColorCoding")]
+        public IActionResult GetAllColorCoding()
+        {
+            var result = RandomNumberService.GetColorRanges();
+            return Ok(result);
+
+        }
     }
 }

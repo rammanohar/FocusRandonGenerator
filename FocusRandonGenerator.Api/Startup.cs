@@ -1,9 +1,13 @@
 namespace FocusRandonGenerator.Api
 {
+    using Focus.RandomGenerator.DataEntitiyRepository;
+    using Focus.RandomGenerator.DataEntityInterface;
     using Focus.RandomGenerator.Service;
+    using FocusRandomGenerator.DataEntities;
     using FocusRandomGenerator.Interface;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
@@ -30,9 +34,14 @@ namespace FocusRandonGenerator.Api
         /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<RandomNumberDbContext>(options =>
+             options.UseSqlServer(Configuration.GetConnectionString("RandomNumberDBConnection")));
             services.AddControllers();
+
             services.AddScoped<IRandomNumberService, RandomNumberService>();
-           
+            services.AddScoped<IRandomNumberRepository, RandomNumberRepository>();
+            //services.AddScoped<IDbFactory, DbFactory>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
@@ -67,6 +76,8 @@ namespace FocusRandonGenerator.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+          
 
             app.UseHttpsRedirection();
 

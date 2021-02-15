@@ -1,6 +1,7 @@
 ﻿namespace FocusRandomGenerator.Interface
 {
-    using FocusRandomGenerator.DataEntities;
+    using Focus.RandomGenerator.Models;
+    using System.Collections.Generic;
 
     /// <summary>
     /// IRandomNumberService
@@ -28,6 +29,26 @@
         /// <returns></returns>
         string GetColorCoding(int value);
 
+
+        /// <summary>
+        /// ColorRanges
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<ColorRanges> GetColorRanges();
+
+
+        /// <summary>
+        /// Get the List of random numbers
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<GeneratedRandonNumber> GetAllRandomNumber();
+
+
+        /// <summary>
+        /// SaveRandomNumber
+        /// </summary>
+        /// <returns></returns>
+        bool SaveRandomNumber(GeneratedRandonNumber generatedRandonNumber);
 
     }
 }

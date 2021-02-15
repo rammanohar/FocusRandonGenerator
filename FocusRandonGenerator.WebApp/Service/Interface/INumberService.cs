@@ -8,10 +8,6 @@ namespace FocusRandonGenerator.WebApp.Service.Interface
 {
     public interface INumberService
     {
-        List<int> GetRandomNumbers();
-
-        List<int> GetCustomRandomNumbers(int id);
-
         GeneratedRandonNumber GetNumbersByColor();
 
         GeneratedRandonNumber GetCustomNumbersByColor(int id);
