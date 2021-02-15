@@ -40,7 +40,7 @@ namespace FocusRandonGenerator.Api
 
             services.AddScoped<IRandomNumberService, RandomNumberService>();
             services.AddScoped<IRandomNumberRepository, RandomNumberRepository>();
-            //services.AddScoped<IDbFactory, DbFactory>();
+           
 
             services.AddSwaggerGen(c =>
             {
