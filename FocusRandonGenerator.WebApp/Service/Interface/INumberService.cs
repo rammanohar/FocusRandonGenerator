@@ -11,6 +11,8 @@ namespace FocusRandonGenerator.WebApp.Service.Interface
         GeneratedRandonNumber GetNumbersByColor();
 
         GeneratedRandonNumber GetCustomNumbersByColor(int id);
-       
+
+        List<GeneratedRandonNumber> GetAllCustomNumbers();
+
     }
 }

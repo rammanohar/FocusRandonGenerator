@@ -9,7 +9,7 @@ namespace Focus.RandomGenerator.DataEntityInterface
         /// Get the List of random numbers
         /// </summary>
         /// <returns></returns>
-        List<RandomNumber> GetAllRandomNumber();
+        List<RandomNumber> GetAllRandomNumbers();
 
         /// <summary>
         /// Save randomNumber

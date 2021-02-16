@@ -27,5 +27,15 @@
         /// </summary>
         public int ColorCodingId { get; set; }
 
+        /// <summary>
+        /// Gets or Sets RandomNumberId
+        /// </summary>
+        public int RandomNumberId { get; set; }
+
+        /// <summary>
+        /// RandomNumber
+        /// </summary>
+        public RandomNumber RandomNumber { get; set; }
+
     }
 }

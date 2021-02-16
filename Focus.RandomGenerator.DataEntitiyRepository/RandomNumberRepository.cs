@@ -2,6 +2,7 @@
 {
     using Focus.RandomGenerator.DataEntityInterface;
     using FocusRandomGenerator.DataEntities;
+    using Microsoft.EntityFrameworkCore;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -10,7 +11,7 @@
         protected readonly RandomNumberDbContext dbContext;
 
 
-        public RandomNumberRepository(RandomNumberDbContext dbContext) 
+        public RandomNumberRepository(RandomNumberDbContext dbContext)
         {
 
             this.dbContext = dbContext;
@@ -21,10 +22,15 @@
             return dbContext.ColorCoding.ToList();
         }
 
-        public List<RandomNumber> GetAllRandomNumber()
+        public List<RandomNumber> GetAllRandomNumbers()
         {
+            return
+            
+             dbContext.RandomNumbers
+                        .Include(n => n.Numbers)
+                            .ThenInclude(c => c.ColorCoding)
+                        .ToList();
 
-            return dbContext.RandomNumbers.ToList(); 
         }
 
 
@@ -32,7 +38,7 @@
         {
 
             dbContext.RandomNumbers.Add(randomNumber);
-           
+
             var success = dbContext.SaveChanges();
 
             return success > 0;

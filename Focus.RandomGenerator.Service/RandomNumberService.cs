@@ -79,9 +79,9 @@
         /// GetAllRandomNumber
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<GeneratedRandonNumber> GetAllRandomNumber()
+        public IEnumerable<GeneratedRandonNumber> GetAllRandomNumbers()
         {
-            return this.randomNumberRepository.GetAllRandomNumber().Select(r => new GeneratedRandonNumber
+            return this.randomNumberRepository.GetAllRandomNumbers().Select(r => new GeneratedRandonNumber
             { 
                  Id = r.Id,
                   GeneratorDateTime = r.GeneratorDateTime,

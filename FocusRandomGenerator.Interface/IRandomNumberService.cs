@@ -41,7 +41,7 @@
         /// Get the List of random numbers
         /// </summary>
         /// <returns></returns>
-        IEnumerable<GeneratedRandonNumber> GetAllRandomNumber();
+        IEnumerable<GeneratedRandonNumber> GetAllRandomNumbers();
 
 
         /// <summary>

@@ -5,13 +5,14 @@
 }
 
 <div class="container">
-   
-        <partial name="_Views_RandomNumber" model="Model" />
-         <br/><br />
-        <p>
-            @Html.ActionLink("Click to generate a randomNumbers with custom digits", "CustomRandomNumber")
-        </p>
-    </div>
+
+    <partial name="_Views_RandomNumber" model="Model" />
+    <br /><br />
+    <p>
+        @Html.ActionLink("Click to generate a randomNumbers with custom digits", "CustomRandomNumber")
+    </p>
+    @Html.ActionLink("Generated List of randomNumbers", "ListRandonNumbers")
+</div>
 
    
 

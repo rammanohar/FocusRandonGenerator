@@ -84,7 +84,7 @@ namespace Focus.RandomGenerator.Tests
 
             randomNumberRepository.Setup(x => x.GetColorCoding()).Returns(listColorCodings);
 
-            randomNumberRepository.Setup(x => x.GetAllRandomNumber()).Returns(ListofRandomNumbers);
+            randomNumberRepository.Setup(x => x.GetAllRandomNumbers()).Returns(ListofRandomNumbers);
 
             randomNumberRepository.Setup(x => x.SaveRandomNumber(It.IsAny<RandomNumber>())).Returns(
               (RandomNumber target) =>
@@ -149,7 +149,7 @@ namespace Focus.RandomGenerator.Tests
            
             Assert.AreEqual(result, true);
 
-            var count = this.randomNumberRepository.GetAllRandomNumber().Count();
+            var count = this.randomNumberRepository.GetAllRandomNumbers().Count();
            
             Assert.AreEqual(count, 2);
         }

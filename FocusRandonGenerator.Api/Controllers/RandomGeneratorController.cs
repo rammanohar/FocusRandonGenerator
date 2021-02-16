@@ -79,12 +79,25 @@
         /// GetaAllColorCoding
         /// </summary>
         /// <returns></returns>
-        [HttpGet("GetaAllColorCoding")]
+        [HttpGet("GetAllColorCoding")]
         public IActionResult GetAllColorCoding()
         {
             var result = RandomNumberService.GetColorRanges();
             return Ok(result);
 
         }
+
+        /// <summary>
+        /// GetaAllColorCoding
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("GetAllCustomNumbers")]
+        public IActionResult GetAllCustomNumbers()
+        {
+            var result = RandomNumberService.GetAllRandomNumbers();
+            return Ok(result);
+
+        }
+        
     }
 }

@@ -34,6 +34,19 @@
         }
 
         /// <summary>
+        /// ListRandonNumbers
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult ListRandonNumbers()
+        {
+            var generatedRandonNumbers = NumberService.GetAllCustomNumbers();
+
+
+            return View(generatedRandonNumbers);
+        }
+
+
+        /// <summary>
         /// CustomRandomNumber
         /// </summary>
         /// <returns></returns>

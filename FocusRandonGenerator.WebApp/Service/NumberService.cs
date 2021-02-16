@@ -4,6 +4,7 @@
     using FocusRandonGenerator.WebApp.Service.Interface;
     using Microsoft.Extensions.Configuration;
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Net.Http;
 
@@ -69,6 +70,28 @@
             return result;
         }
 
+        public List<GeneratedRandonNumber> GetAllCustomNumbers()
+        {
+            string address = $"RandomGenerator/GetAllCustomNumbers";
+            var result = new List<GeneratedRandonNumber>();
+            var response = HttpGet(address);
+            if (response.IsSuccessStatusCode)
+            {
+                var readTask = response.Content.ReadAsAsync<List<GeneratedRandonNumber>>();
+                readTask.Wait();
+
+                result = readTask.Result;
+            }
+
+            foreach (var r in result)
+            {
+                r.NoofRandomnumbers = r.RandonNumbers.Count();
+            }
+
+            return result;
+        }
        
+
+
     }
 }
